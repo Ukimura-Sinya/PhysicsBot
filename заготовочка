@@ -1,0 +1,18 @@
+import telebot
+
+bot = telebot.TeleBot('6086712184:AAEnLEZlWT3-LSQvptnw2CjBKvZBvw14_4c')
+
+@bot.message_handler(commands=['start'])
+def start(message):
+
+    mes1 = f'Привет, {message.from_user.first_name}!'
+    bot.send_message(message.chat.id, mes1)
+
+@bot.message_handler()
+def get_user_text(message):
+    if message.text == "Привет":
+        bot.send_message(message.chat.id, 'Уже здоровались!')
+    else:
+        bot.send_message(message.chat.id, 'Не могу разобрать(')
+
+bot.polling(none_stop=True)

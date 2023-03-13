@@ -1,17 +1,8 @@
 f = ['nu=N/Na', 'mu=m/nu', 'nu=m/mu=N/Na', 'n=Na*m/mu', 'p=f/s', 'p=2/3*mo*n*Vcp**2', 'n=N/V', 'p=2/3*n*Ecp', 'Ro=m/V', 'm=mo*n', 'p=1/3*Ro*Vcp**2', 'p=n*K*T', 'p=2/3*n*Ecp', 'Ecp=2/3*K*T', 'pV=m*R*T/mu', 'Vcp**2=3*K*T/mo']
 x = input()
-z = x.find("m")
-print(z)
-key = 'm'
+z = x.find('m')
 if z != -1:
-    is_found = False
-    if 'm' in f:
-        is_found = True
-
-        print('Your word is in this line:', )
-    if not is_found:
-        print('There is no lines with your word')
+    for i,x in enumerate(f):
+        print(i, ' ', x)
 elif z == -1:
-    print('')
-
-print('Значение молекулярной массы: ', )
+    print('----------')
